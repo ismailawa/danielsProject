@@ -29,10 +29,9 @@
               <table width="100%">
                 <tr>
                   <td width="5%" style="background: #90caf9;"><img src="images/smalllogo.png" style="width:30px"></td>
-                  <td width="5%" style="background: #90caf9;"><img src="img/hostlogo.png" style="width:30px"></td>
                   <td style="background: #90caf9;" colspan="3">
                     <p style="text-align:center; font-weight: bolder; color:#000">
-                    <span style="color: #000; ">JUTH 2018</span>
+                    <span style="color: #000; ">SOMETHING GOES HERE</span>
                   </td>
                 </tr>
                 <tr>
@@ -42,32 +41,17 @@
                   </td>
                 </tr>
                 
-                <tr><p>
+                <tr>
+                  <p>
                   <td colspan="2"><p style="font-size:12px;">NAME:</p></td>
                   <td colspan="3">
                   <p><b style="font-size:17px; text-transform: uppercase;">{{ $member->surname }}</b>&nbsp;<b style="font-size:15px; font-family:Tekton Pro; text-transform: uppercase;">{{ $member->firstname }}</b></p>
                   </td></p>
                 </tr>
                 <tr>
-                  <td colspan="2"><p style="font-size:12px;">INSTITUTION:</p></td>
+                  <td colspan="2"><p style="font-size:12px;">DEPARTMENT:</p></td>
                   <td colspan="3">
-                    <p><b style="font-size:14px; font-family:Tekton Pro">{{ $member->institution }}</b></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2"><p style="font-size:12px;">HOSTEL:</p></td>
-                  <td>
-                    <h4>{{ $member->hostel }}</h4>
-                  </td>
-                  <td><p style="font-size:12px;">BS GROUP:</p></td>
-                  <td>
-                    <p><b style="font-size:15px; font-family:Tekton Pro">{{ $member->biblestudygroup }}</b></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="50px" colspan="2"><p style="font-size:12px;">POSITION:</p></td>
-                  <td colspan="3">
-                    <h4>{{ $member->position }}</h4>
+                    <p><b style="font-size:14px; font-family:Tekton Pro">{{ $member->department }}</b></p>
                   </td>
                 </tr>
                 <br>
@@ -118,16 +102,14 @@
   @parent
   <script type="text/javascript">
     var form = jQuery('#printForm'),
-      modal_content = jQuery('#modal_content');
+    modal_content = jQuery('#modal_content');
 
-      jQuery('#refresh').on('click', function(e) {
-        console.log('refreshing');
+    jQuery('#refresh').on('click', function(e) {
         e.preventDefault();
-          location.reload();
-      });
+        location.reload();
+     });
 
-      jQuery('#print').on('click', function(e) {
-        console.log('printing');
+    jQuery('#print').on('click', function(e) {
         e.preventDefault();
         window.print();
         jQuery.ajax({
