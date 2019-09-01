@@ -20,13 +20,9 @@ class CreateMembersTable extends Migration
             $table->string('surname');
             $table->string('othername');
             $table->string('initials');
+            $table->string("department");
             $table->string('gender');
             $table->date('dob');
-            $table->string('institution');
-            $table->string('zone');
-            $table->string('position');
-            $table->string('biblestudy');
-            $table->string('hostel');
             $table->string('mobile');
             $table->string('email')->unique();
             $table->integer('author_id');

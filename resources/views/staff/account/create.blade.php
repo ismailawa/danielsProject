@@ -79,10 +79,23 @@
 		      <div class="field">
 		          <input type="text" name="initials" value="{{ old('initials') }}" required autofocus placeholder="First letter of your name">
 		          @if ($errors->has('initials'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('initials') }}</strong>
-                                    </span>
-                                @endif
+						<span class="help-block">
+							<strong>{{ $errors->first('initials') }}</strong>
+						</span>
+                  @endif
+		      </div>
+		    </div>
+		  </div>
+		 <div class="inline fields">
+		    <div class="eight wide field{{ $errors->has('department') ? ' has-error' : '' }}">
+		      <label>Department:</label>
+		      <div class="field">
+		          <input type="text" name="department" value="{{ old('department') }}" required autofocus placeholder="Department Name">
+		          @if ($errors->has('department'))
+							<span class="help-block">
+								<strong>{{ $errors->first('department') }}</strong>
+							</span>
+                  @endif
 		      </div>
 		    </div>
   		</div>
@@ -162,7 +175,7 @@
    //          ;
 
     var form = jQuery('#reg_form'),
-      modal_content = jQuery('#modal_content');
+    modal_content = jQuery('#modal_content');
 
     jQuery('#register').on('click', function(e) {
       console.log('here');

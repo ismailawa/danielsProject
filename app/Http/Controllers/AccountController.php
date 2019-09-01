@@ -26,18 +26,15 @@ class AccountController extends Controller
     
     public function getCreate(){
     	$salutations = Salutation::orderBy('id', 'asc')->paginate(20);
-    	$biblestudygroups = Biblestudygroup::orderBy('id', 'asc')->paginate(20);
-    	$zones = Zone::orderBy('id', 'asc')->paginate(10);
-    	$positions = Position::orderBy('id', 'asc')->paginate(50);
-    	$hostels = Hostel::orderBy('id', 'asc')->paginate(20);
-    	$institutions = Institution::orderBy('id', 'asc')->paginate(300);
-    	return view('staff.account.create')->withSalutations($salutations)->withBiblestudygroups($biblestudygroups)->withZones($zones)->withPositions($positions)->withHostels($hostels)->withInstitutions($institutions);
+ 
+    	return view('staff.account.create')->withSalutations($salutations);
     }
 
     public function postCreate(Request $request){
 		$resp = array('code' => '900', 'status' => 'fail');
 
-		$validate = Validator::make($request->all(),
+		$validate = Validator::make(
+			$request->all(),
 			array(
 					'email' => 'required|email|max:60|unique:members',
 					'salutation' => 'required',
@@ -45,6 +42,7 @@ class AccountController extends Controller
 					'firstname' => 'required',
 					'initials' => 'required',
 					'gender' => 'required',
+					'department'=> 'required',
 					'dob' => 'required',
 					'mobile' => 'required',
 				)
@@ -69,11 +67,7 @@ class AccountController extends Controller
 			$member->initials = $request->initials;
 			$member->gender = $request->gender;
 			$member->dob = $request->dob;
-			$member->institution = $request->institution;
-			$member->zone = $request->zone;
-			$member->position = $request->position;
-			$member->hostel = $request->hostel;
-			$member->biblestudygroup = $request->biblestudygroup;
+			$member->department = $request->department;
 			$member->mobile = $request->mobile;
 			$member->email = $request->email;
 			$member->author_id = Auth::user()->id;
