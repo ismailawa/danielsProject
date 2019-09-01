@@ -40,10 +40,10 @@
 		      <div class="field">
 		          <input type="text" name="surname" value="{{ old('surname') }}" required autofocus placeholder="Surname">
 		          @if ($errors->has('surname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('surname') }}</strong>
-                                    </span>
-                                @endif
+						<span class="help-block">
+							<strong>{{ $errors->first('surname') }}</strong>
+						</span>
+                    @endif
 		      </div>
 		    </div>
   		</div>
@@ -53,10 +53,10 @@
 		      <div class="field">
 		          <input type="text" name="firstname" value="{{ old('firstname') }}" required autofocus placeholder="Firstname">
 		          @if ($errors->has('firstname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('firstname') }}</strong>
-                                    </span>
-                                @endif
+						<span class="help-block">
+							<strong>{{ $errors->first('firstname') }}</strong>
+						</span>
+                  @endif
 		      </div>
 		    </div>
   		</div>
@@ -66,10 +66,10 @@
 		      <div class="field">
 		          <input type="text" name="othername" value="{{ old('othername') }}" required autofocus placeholder="middle name">
 		          @if ($errors->has('othername'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('othername') }}</strong>
-                                    </span>
-                                @endif
+						<span class="help-block">
+							<strong>{{ $errors->first('othername') }}</strong>
+						</span>
+                  @endif
 		      </div>
 		    </div>
   		</div>
@@ -103,95 +103,6 @@
 		      <label>Date of Birth:</label>
 		      <div class="field">
 		          <input type="date" name="dob" placeholder="mm/dd/yy">
-		      </div>
-		    </div>
-  		</div>
-  		<h5 class="ui horizontal header divider">
-          <a href="#">OTHER DETAILS</a>
-        </h5>
-        <div class="inline fields">
-		    <div class="eight wide field{{ $errors->has('institutionname') ? ' has-error' : '' }}">
-		      <label>Institution:</label>
-		      <div class="field">
-		          <select class="ui fluid search dropdown" name="institution">
-		             @if( $institutions->count() > 0 )
-			          	@foreach ($institutions as $institution)
-			          	<option value="{{ $institution->institutionname }}">{{ $institution->institutionname }}</option>
-						@endforeach
-					@endif
-					@if($errors->has('institution'))
-			            <p style="color:red">{{$errors->first('institution')}}*</p>
-			        @endif
-	            </select>
-		      </div>
-		    </div>
-  		</div>
-  		<div class="inline fields">
-		    <div class="eight wide field">
-		      <label>Zone:</label>
-		      <div class="field">
-		          <select class="ui fluid search dropdown" name="zone">
-		           @if( $zones->count() > 0 )
-			          	@foreach ($zones as $zone)
-			          	<option value="{{ $zone->name }}">{{ $zone->name }}</option>
-						@endforeach
-					@endif
-					@if($errors->has('zone'))
-			            <p style="color:red">{{$errors->first('zone')}}*</p>
-			        @endif
-		            
-	            </select>
-		      </div>
-		    </div>
-  		</div>
-  		<div class="inline fields">
-		    <div class="eight wide field">
-		      <label>Position:</label>
-		      <div class="field">
-		          <select class="ui fluid search dropdown" name="position">
-		             @if( $positions->count() > 0 )
-			          	@foreach ($positions as $position)
-			          	<option value="{{ $position->positionname }}">{{ $position->positionname }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-						@endforeach
-					@endif
-					@if($errors->has('position'))
-			            <p style="color:red">{{$errors->first('position')}}*</p>
-			        @endif
-	            </select>
-		      </div>
-		    </div>
-  		</div>
-  		<div class="inline fields">
-		    <div class="eight wide field">
-		      <label>Bible Study Group:</label>
-		      <div class="field">
-		          <select class="ui fluid search dropdown" name="biblestudygroup">
-		           	@if( $biblestudygroups->count() > 0 )
-			          	@foreach ($biblestudygroups as $biblestudygroup)
-			          	<option value="{{ $biblestudygroup->biblestudygroupname }}">{{ $biblestudygroup->biblestudygroupname }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-						@endforeach
-					@endif
-					@if($errors->has('biblestudygroup'))
-			            <p style="color:red">{{$errors->first('biblestudygroup')}}*</p>
-			        @endif
-	            </select>
-		      </div>
-		    </div>
-  		</div>
-  		<div class="inline fields">
-		    <div class="eight wide field">
-		      <label>Hostel:</label>
-		      <div class="field">
-		          <select class="ui fluid search dropdown" name="hostel">
-		            @if( $hostels->count() > 0 )
-			          	@foreach ($hostels as $hostel)
-			          	<option value="{{ $hostel->hostelname }}">{{ $hostel->hostelname }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-						@endforeach
-					@endif
-					@if($errors->has('hostel'))
-			            <p style="color:red">{{$errors->first('hostel')}}*</p>
-			        @endif
-	            </select>
 		      </div>
 		    </div>
   		</div>
