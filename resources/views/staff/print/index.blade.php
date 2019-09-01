@@ -40,7 +40,6 @@
                     <p style="background: #4caf50; border: 1px solid black; margin-top: 1px; padding:5px; text-align:center; font-weight: bold;">IDENTITY CARD</p>
                   </td>
                 </tr>
-                
                 <tr>
                   <p>
                   <td colspan="2"><p style="font-size:12px;">NAME:</p></td>
